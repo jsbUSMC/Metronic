@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+@{
+    Func<string, IHtmlString> json = x => new HtmlString(Serenity.JSON.Stringify(x));
+    var hideNav = Request["hideNav"] == "1";
+    var logged = Serenity.Authorization.Username;
+    var themeCookie = Request.Cookies["ThemePreference"];
+    var theme = themeCookie != null && !themeCookie.Value.IsEmptyOrNull() ? themeCookie.Value : "blue";
+}
+<!--[if IE 8]> <html lang="@UICulture" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="@UICulture" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="@UICulture" class="no-js@(hideNav ? " no-navigation" : "")">
+<!--<![endif]-->
+<head>
+    @{Html.RenderPartial(MVC.Views.Shared._MetronicHead);}
+    @RenderSection("Head", false)
+    <title>@(ViewData["Title"]) - Metronic</title>
+</head>
+<body id="s-@(ViewData["PageId"])Page" class="@(ViewData["BodyClass"]) page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-md @(hideNav ? " no-navigation" : " has-layout-event")">
+
+    @if (hideNav)
+    {
+        <script type="text/javascript">
+    $(function () {
+        @RenderSection("PageInitScript", false)
+    });
+        </script>
+        <div id="page-outer-nonav">
+            <div id="page-container" class="page-container-common">
+                @RenderBody()
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="page-wrapper">
+            @{ Html.RenderPartial(MVC.Views.Shared._MetronicHeader); }
+
+            <!-- BEGIN HEADER & CONTENT DIVIDER -->
+            <div class="clearfix"> </div>
+            <!-- END HEADER & CONTENT DIVIDER -->
+
+            <!-- BEGIN CONTAINER -->
+            <div class="page-container">
+                <!-- BEGIN SIDEBAR -->
+                @{ Html.RenderPartial(MVC.Views.Shared._MetronicSidebar); }
+                <!-- END SIDEBAR -->
+                <!-- BEGIN CONTENT -->
+                <div class="page-content-wrapper">
+                    <!-- BEGIN CONTENT BODY -->
+                    <div class="page-content">
+                        <!-- BEGIN PAGE HEADER-->
+                        <!-- BEGIN THEME PANEL -->
+                        <div class="theme-panel hidden-xs hidden-sm">
+                            <div class="toggler"> </div>
+                            <div class="toggler-close"> </div>
+                            <div class="theme-options">
+                                <div class="theme-option theme-colors clearfix">
+                                    <span> THEME COLOR </span>
+                                    <ul>
+                                        <li class="color-default current tooltips" data-style="default" data-container="body" data-original-title="Default"> </li>
+                                        <li class="color-darkblue tooltips" data-style="darkblue" data-container="body" data-original-title="Dark Blue"> </li>
+                                        <li class="color-blue tooltips" data-style="blue" data-container="body" data-original-title="Blue"> </li>
+                                        <li class="color-grey tooltips" data-style="grey" data-container="body" data-original-title="Grey"> </li>
+                                        <li class="color-light tooltips" data-style="light" data-container="body" data-original-title="Light"> </li>
+                                        <li class="color-light2 tooltips" data-style="light2" data-container="body" data-html="true" data-original-title="Light 2"> </li>
+                                    </ul>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Layout </span>
+                                    <select class="layout-option form-control input-sm">
+                                        <option value="fluid" selected="selected">Fluid</option>
+                                        <option value="boxed">Boxed</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Header </span>
+                                    <select class="page-header-option form-control input-sm">
+                                        <option value="fixed" selected="selected">Fixed</option>
+                                        <option value="default">Default</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Top Menu Dropdown</span>
+                                    <select class="page-header-top-dropdown-style-option form-control input-sm">
+                                        <option value="light" selected="selected">Light</option>
+                                        <option value="dark">Dark</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Sidebar Mode</span>
+                                    <select class="sidebar-option form-control input-sm">
+                                        <option value="fixed">Fixed</option>
+                                        <option value="default" selected="selected">Default</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Sidebar Menu </span>
+                                    <select class="sidebar-menu-option form-control input-sm">
+                                        <option value="accordion" selected="selected">Accordion</option>
+                                        <option value="hover">Hover</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Sidebar Style </span>
+                                    <select class="sidebar-style-option form-control input-sm">
+                                        <option value="default" selected="selected">Default</option>
+                                        <option value="light">Light</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Sidebar Position </span>
+                                    <select class="sidebar-pos-option form-control input-sm">
+                                        <option value="left" selected="selected">Left</option>
+                                        <option value="right">Right</option>
+                                    </select>
+                                </div>
+                                <div class="theme-option">
+                                    <span> Footer </span>
+                                    <select class="page-footer-option form-control input-sm">
+                                        <option value="fixed">Fixed</option>
+                                        <option value="default" selected="selected">Default</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END THEME PANEL -->
+                        <!-- BEGIN PAGE BAR -->
+                        <div class="page-bar">
+                            <ul class="page-breadcrumb">
+                                <li>
+                                    <a href="~/">Home</a>
+                                    <i class="fa fa-circle"></i>
+                                </li>
+                                <li>
+                                    <span>Page Layouts</span>
+                                </li>
+                            </ul>
+                            <div class="page-toolbar">
+                                <div class="btn-group pull-right">
+                                    <button type="button" class="btn green btn-sm btn-outline dropdown-toggle" data-toggle="dropdown">
+                                        Actions
+                                        <i class="fa fa-angle-down"></i>
+                                    </button>
+                                    <ul class="dropdown-menu pull-right" role="menu">
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-bell"></i> Action
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-shield"></i> Another action
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-user"></i> Something else here
+                                            </a>
+                                        </li>
+                                        <li class="divider"> </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="icon-bag"></i> Separated link
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END PAGE BAR -->
+                        <!-- BEGIN PAGE TITLE-->
+                        @if (IsSectionDefined("ContentHeader"))
+                        {
+                            <h1 class="page-title">@RenderSection("ContentHeader")</h1>
+                        }
+                        <!-- END PAGE TITLE-->
+                        <!-- END PAGE HEADER-->
+                        <!-- BEGIN PAGE CONTENT BODY -->
+                        <section>
+                            @RenderBody()
+                        </section>
+                        <!-- END PAGE CONTENT BODY -->
+                    </div>
+                    <!-- END CONTENT BODY -->                    
+                </div>
+                <!-- END CONTENT -->
+                <!-- BEGIN QUICK SIDEBAR -->
+                @{ Html.RenderPartial(MVC.Views.Shared._MetronicQuickSidebar); }
+                <!-- END QUICK SIDEBAR -->
+            </div>
+            <!-- END CONTAINER -->
+            <!-- BEGIN FOOTER -->
+            @{ Html.RenderPartial(MVC.Views.Shared._MetronicFooter); }
+            <!-- END FOOTER -->
+
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <form action="#" method="get" class="sidebar-form">
+                        <div class="input-group">
+                            <input type="text" id="SidebarSearch" name="q" class="form-control" autocomplete="off">
+                            <span class="input-group-btn">
+                                <button type="button" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                    <ul class="sidebar-menu" id="SidebarMenu">
+                        @{Html.RenderPartial(MVC.Views.Shared.LeftNavigation, new Metronic.Navigation.NavigationModel()); }
+                    </ul>
+                </section>
+            </aside>
+
+            <div class="content-wrapper">
+                @if (IsSectionDefined("ContentHeader"))
+                {
+                    <section class="content-header">
+                        @RenderSection("ContentHeader")
+                    </section>
+                }
+                <section class="content">
+                    @RenderBody()
+                </section>
+            </div>
+
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    @Texts.Site.Layout.FooterInfo
+                </div>
+                <strong>@Texts.Site.Layout.FooterCopyright</strong> @Texts.Site.Layout.FooterRights
+            </footer>
+
+            <aside class="control-sidebar control-sidebar-dark">
+                <div class="tab-content">
+                    <div class="tab-pane active" id="control-sidebar-settings-tab">
+                        <form method="post">
+                            <h3 class="control-sidebar-heading">@Texts.Site.Layout.GeneralSettings</h3>
+
+                            <div class="form-group">
+                                <label class="control-sidebar-subheading">@Texts.Site.Layout.Language</label>
+                                <select id="LanguageSelect" class="form-control"></select>
+                            </div>
+
+                            <div class="form-group" style="margin-top: 15px;">
+                                <label class="control-sidebar-subheading">@Texts.Site.Layout.Theme</label>
+                                <select id="ThemeSelect" class="form-control"></select>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </aside>
+            <div class="control-sidebar-bg"></div>
+        </div>
+
+        <script type="text/javascript">
+            $().ready(function () {
+                new Metronic.Common.SidebarSearch($('#SidebarSearch'), $('#SidebarMenu')).init();
+                new Metronic.Common.LanguageSelection($('#LanguageSelect'), '@(System.Globalization.CultureInfo.CurrentUICulture.Name)');
+                new Metronic.Common.ThemeSelection($('#ThemeSelect'));
+                @RenderSection("PageInitScript", false);
+
+                var doLayout = function () {
+                    height = (this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height;
+                    height -= $('header.main-header').outerHeight();
+                    height -= $('section.content-header').outerHeight();
+                    height -= $('footer.main-footer').outerHeight();
+                    if (height < 200) height = 200;
+                        $("section.content").css("min-height", (height) + "px");
+
+                    $('body').triggerHandler('layout');
+                };
+
+                $(window).bind("load resize layout", doLayout);
+                doLayout();
+            });
+        </script>
+}
+</body>
+</html>

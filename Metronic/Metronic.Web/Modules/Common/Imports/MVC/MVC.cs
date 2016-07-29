@@ -307,6 +307,14 @@ namespace MVC
             public const string _LayoutNoNavigation = "~/Views/Shared/_LayoutNoNavigation.cshtml";
             public const string Error = "~/Views/Shared/Error.cshtml";
             public const string LeftNavigation = "~/Views/Shared/LeftNavigation.cshtml";
+
+            public const string _MetronicLayout = "~/Views/Shared/_LayoutMetronic.cshtml";
+            public const string _MetronicHeader = "~/Views/Shared/_PartialMetronicHeader.cshtml";
+            public const string _MetronicFooter = "~/Views/Shared/_PartialFooter.cshtml";
+            public const string _MetronicHead = "~/Views/Shared/_PartialHead.cshtml";
+            public const string _MetronicSidebar = "~/Views/Shared/_PartialSidebar.cshtml";
+            public const string _MetronicLeftNav = "~/Views/Shared/MetronicLeftNavigation.cshtml";
+            public const string _MetronicQuickSidebar = "~/Views/Shared/_PartialQuickSidebar.cshtml";
         }
     }
 }
