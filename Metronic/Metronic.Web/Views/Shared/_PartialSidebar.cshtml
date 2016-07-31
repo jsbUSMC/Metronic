@@ -21,7 +21,7 @@
             <!-- END SIDEBAR TOGGLER BUTTON -->
             <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
             <li class="sidebar-search-wrapper"> </li>
-            @{ Html.RenderPartial(MVC.Views.Shared._MetronicLeftNav); }
+            @{ Html.RenderPartial(MVC.Views.Shared._MetronicLeftNav, new Metronic.Navigation.NavigationModel()); }
         </ul>
         <!-- END SIDEBAR MENU -->
         <!-- END SIDEBAR MENU -->
