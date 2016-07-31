@@ -6642,6 +6642,7 @@
     <Content Include="Content\assets\global\plugins\typeahead\README.md" />
     <Content Include="Content\assets\pages\media\blog\Thumbs.db" />
     <Content Include="Content\assets\pages\media\pages\Thumbs.db" />
+    <Content Include="Content\metronic\_variables.less" />
     <None Include="Modules\Common\Imports\ServerTypings\ServerTypings.log">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

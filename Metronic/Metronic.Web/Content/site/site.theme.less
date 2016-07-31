@@ -1,48 +1,48 @@
 ﻿@import (reference) "../bootstrap-less/mixins.less";
 @import (reference) "../bootstrap-less/variables.less";
 
-@import "../adminlte/core.less";
-@import "../adminlte/variables.less";
-@import "../adminlte/mixins.less";
+//@import "../adminlte/core.less";
+//@import "../adminlte/variables.less";
+//@import "../adminlte/mixins.less";
 
-@import "../adminlte/header.less";
-@import "../adminlte/sidebar.less";
-@import "../adminlte/sidebar-mini.less";
-@import "../adminlte/control-sidebar.less";
-@import "../adminlte/dropdown.less";
-@import "../adminlte/forms.less";
-@import "../adminlte/progress-bars.less";
-@import "../adminlte/small-box.less";
-@import "../adminlte/boxes.less";
-@import "../adminlte/info-box.less";
-@import "../adminlte/timeline.less";
-@import "../adminlte/buttons.less";
-@import "../adminlte/callout.less";
-@import "../adminlte/alerts.less";
-@import "../adminlte/navs.less";
-@import "../adminlte/table.less";
-@import "../adminlte/labels.less";
-@import "../adminlte/modal.less";
-@import "../adminlte/social-widgets.less";
-@import "../adminlte/skins/_all-skins.less";
+//@import "../adminlte/header.less";
+//@import "../adminlte/sidebar.less";
+//@import "../adminlte/sidebar-mini.less";
+//@import "../adminlte/control-sidebar.less";
+//@import "../adminlte/dropdown.less";
+//@import "../adminlte/forms.less";
+//@import "../adminlte/progress-bars.less";
+//@import "../adminlte/small-box.less";
+//@import "../adminlte/boxes.less";
+//@import "../adminlte/info-box.less";
+//@import "../adminlte/timeline.less";
+//@import "../adminlte/buttons.less";
+//@import "../adminlte/callout.less";
+//@import "../adminlte/alerts.less";
+//@import "../adminlte/navs.less";
+//@import "../adminlte/table.less";
+//@import "../adminlte/labels.less";
+//@import "../adminlte/modal.less";
+//@import "../adminlte/social-widgets.less";
+//@import "../adminlte/skins/_all-skins.less";
 
-@import "../adminlte/mailbox.less";
-@import "../adminlte/lockscreen.less";
-@import "../adminlte/login_and_register.less";
-@import "../adminlte/404_500_errors.less";
-@import "../adminlte/invoice.less";
-@import "../adminlte/profile.less";
+//@import "../adminlte/mailbox.less";
+//@import "../adminlte/lockscreen.less";
+//@import "../adminlte/login_and_register.less";
+//@import "../adminlte/404_500_errors.less";
+//@import "../adminlte/invoice.less";
+//@import "../adminlte/profile.less";
 
-@import "../adminlte/bootstrap-social.less";
-@import "../adminlte/fullcalendar.less";
-@import "../adminlte/select2.less";
+//@import "../adminlte/bootstrap-social.less";
+//@import "../adminlte/fullcalendar.less";
+//@import "../adminlte/select2.less";
 
-@import "../adminlte/carousel.less";
-@import "../adminlte/direct-chat.less";
-@import "../adminlte/products.less";
-@import "../adminlte/users-list.less";
-@import "../adminlte/miscellaneous.less";
-@import "../adminlte/print.less";
+//@import "../adminlte/carousel.less";
+//@import "../adminlte/direct-chat.less";
+//@import "../adminlte/products.less";
+//@import "../adminlte/users-list.less";
+//@import "../adminlte/miscellaneous.less";
+//@import "../adminlte/print.less";
 
 body {
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -123,11 +123,11 @@ textarea {
 }
 
 section.content > .s-DataGrid {
-    padding: 10px;
-    border-radius: @box-border-radius;
+    padding: 12px 20px 15px;
+    border-radius: 2px;
     background: #fff;
-    border-top: 3px solid @light-blue;
-    box-shadow: @box-boxshadow;
+    box-shadow: 0 2px 3px 2px rgba(0,0,0,.03);
+    margin-bottom: 25px;
 }
 
 .grid-toolbar {
@@ -159,32 +159,6 @@ section.content > .s-DataGrid {
     min-height: initial;
 }
 
-.page-title {
-    border-bottom: 1px solid #eee;
-    margin-bottom: 8px;
-    color: #0090d9;
-    padding: 8px 8px;
-    font-size: 15px;
-    font-weight: 600;
-}
-
-.main-header .logo i {
-    width: 50px;
-    height: 50px;
-    float: left;
-    background: url(images/serenity-logo-w-40.png) no-repeat center center;
-    animation: fa-spin 5s infinite linear reverse;
-}
-
-.main-header .logo b {
-    float: left;
-    margin-left: 4px;
-}
-
-.skin-black .main-header .logo i,
-.skin-black-light .main-header .logo i {
-    background: url(images/serenity-logo-g-40.png) no-repeat center center;
-}
 
 .s-BasicProgressDialogContent .status-text {
     height: 1em;
@@ -211,42 +185,6 @@ section.content > .s-DataGrid {
     color: #245;
     font-size: 14px;
 }
-
-.ui-dialog.mobile-layout .ui-dialog-titlebar {
-    color: white;
-    background: @blue;
-
-    .ui-dialog-titlebar-close, .ui-dialog-titlebar-close:hover {
-        background-color: transparent;
-        background-image: url(../serenity/images/back-arrow-white.png);
-    }
-}
-
-.skin-green .ui-dialog.mobile-layout .ui-dialog-titlebar {
-    background: @green;
-}
-
-.skin-red .ui-dialog.mobile-layout .ui-dialog-titlebar {
-    background: @red;
-}
-
-.skin-orange .ui-dialog.mobile-layout .ui-dialog-titlebar {
-    background: @orange;
-}
-
-.skin-black, .skin-black-light {
-    .ui-dialog.mobile-layout .ui-dialog-titlebar {
-        color: black;
-        background: white;
-    }
-
-    .ui-dialog.mobile-layout .ui-dialog-titlebar .ui-dialog-titlebar-close,
-    .ui-dialog.mobile-layout .ui-dialog-titlebar .ui-dialog-titlebar-close:hover {
-        background-color: transparent;
-        background-image: url(../serenity/images/back-arrow-black.png);
-    }
-}
-
 .s-MessageDialog {
     min-width: 310px;
 }
