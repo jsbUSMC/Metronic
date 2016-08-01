@@ -7,6 +7,7 @@ namespace Metronic
     using System.Threading;
     using System.Web.Mvc;
     using System.Web.Routing;
+    using System.Web.Optimization;
 
     public class Global : System.Web.HttpApplication
     {
@@ -24,6 +25,8 @@ namespace Metronic
             ViewEngines.Engines.Add(new RazorViewEngine());
 
             SiteInitialization.ApplicationStart();
+
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
         protected void Application_End(object sender, EventArgs e)

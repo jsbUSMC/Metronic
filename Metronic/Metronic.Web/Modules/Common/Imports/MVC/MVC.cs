@@ -315,6 +315,8 @@ namespace MVC
             public const string _MetronicSidebar = "~/Views/Shared/_PartialSidebar.cshtml";
             public const string _MetronicLeftNav = "~/Views/Shared/MetronicLeftNavigation.cshtml";
             public const string _MetronicQuickSidebar = "~/Views/Shared/_PartialQuickSidebar.cshtml";
+
+            public const string _MetronicAltHeader = "~/Views/Shared/_PartialHeadAlt.cshtml";
         }
     }
 }
