@@ -23,7 +23,7 @@ var target = item.Target; if (target != null) { target += " target=" + target; }
     <li class="@cssClass">
         <a href="@sectionUrl" @target class="nav-link @linkClass">
             <i class="fa @(icon)"></i>
-            <span>@title</span>
+            <span class="title">@title</span>
             @if (!item.Children.IsEmptyOrNull())
             {
                 <span class="arrow"></span>
